@@ -15,8 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from learningpython.views import hello, current_datetime, hours_ahead
-from books.views import display_meta
+from learningpython.views import hello, current_datetime, hours_ahead, contact
+from books.views import display_meta, search_form, search
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -24,5 +24,8 @@ urlpatterns = [
     url(r'^time/$', current_datetime),
     url(r'^time/plus/(\d{1,2})/$', hours_ahead),
     url(r'^display_meta/$', display_meta),
+    url(r'^search_form/$', search_form),
+    url(r'^search/$', search),
+    url(r'^contact/$', contact),
 
 ]
